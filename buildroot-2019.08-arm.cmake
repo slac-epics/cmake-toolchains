@@ -1,10 +1,26 @@
-set(TOOLCHAIN_PATH "/sdf/sw/epics/package/linuxRT/buildroot-2019.08/host/linux-x86_64/arm/")
+#----------------------------------------------------------------------------#
+# Company    : SLAC National Accelerator Laboratory
+#----------------------------------------------------------------------------#
+# Description: Buildroot 2019.08 toolchain
+#----------------------------------------------------------------------------#
+# This file is part of 'slac-cmake-toolchains'. It is subject to the license
+# terms in the LICENSE.txt file found in the top-level directory of this
+# distribution, and at:
+#    https://confluence.slac.stanford.edu/display/ppareg/LICENSE.html.
+# No part of 'slac-cmake-toolchains', including this file, may be copied,
+# modified, propagated, or distributed except according to the terms contained
+# in the LICENSE.txt file.
+#----------------------------------------------------------------------------#
+
+if (NOT DEFINED BR_TOOLCHAIN_PATH)
+    set(BR_TOOLCHAIN_PATH "/sdf/sw/epics/package/linuxRT/buildroot-2019.08/host/linux-x86_64/arm/")
+endif()
 
 set(CMAKE_SYSTEM_NAME Linux)
 set(CMAKE_SYSTEM_PROCESSOR i686)
-set(CMAKE_SYSROOT "${TOOLCHAIN_PATH}/arm-buildroot-linux-gnueabi/sysroot")
-set(CMAKE_C_COMPILER "${TOOLCHAIN_PATH}/bin/arm-buildroot-linux-gnueabi-gcc")
-set(CMAKE_CXX_COMPILER "${TOOLCHAIN_PATH}/bin/arm-buildroot-linux-gnueabi-g++")
+set(CMAKE_SYSROOT "${BR_TOOLCHAIN_PATH}/arm-buildroot-linux-gnueabi/sysroot")
+set(CMAKE_C_COMPILER "${BR_TOOLCHAIN_PATH}/bin/arm-buildroot-linux-gnueabi-gcc")
+set(CMAKE_CXX_COMPILER "${BR_TOOLCHAIN_PATH}/bin/arm-buildroot-linux-gnueabi-g++")
 
 set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
 set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
